@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+.max-width {
+    max-width: 1500px;
+    padding: 0 80px;
+    margin: auto;
+}
+
+
+/*  ----------------------menü styling-------------------  */
+
+.navbar {
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 30px 0;
+    font-family: 'ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky {
+    padding: 15px 0;
+    background: rgb(6, 136, 153);
+}
+
+.navbar .max-width {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 35px;
+    font-weight: 600;
+}
+
+.navbar .logo a span {
+    color: rgb(6, 136, 153);
+    transition: all 0.3s ease;
+}
+
+.navbar.sticky .logo a span {
+    color: white;
+}
+
+.navbar .menu li {
+    list-style: none;
+    display: inline-block;
+}
+
+.navbar .menu li a {
+    color: white;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 25px;
+    transition: color 0.3s ease;
+}
+
+.navbar .menu li a:hover {
+    color: rgb(6, 136, 153);
+}
+
+.navbar.sticky .menu li a:hover {
+    color: white;
+}
+
+
+/*-------------------menu btn styling------------------------*/
+
+.menu-btn {
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    display: none;
+}
+
+
+/* ----------------Kezdőlap section kezdete------------------ */
+
+.home {
+    display: flex;
+    background: url("/img/Kép2.png") no-repeat center;
+    height: 100vh;
+    color: white;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.home .max-width {
+    margin: auto 0 auto 10px;
+}
+
+.home .home-content .text1 {
+    font-size: 35px;
+}
+
+.home .home-content .text2 {
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+
+.home .home-content .text3 {
+    font-size: 40px;
+    margin: 5px 0;
+}
+
+.home .home-content .text2 span {
+    color: rgb(6, 136, 153);
+    font-weight: 500;
+}
+
+
+/* ----------Hírek section style------------------------ */
+
+.hirek {
+    font-family: 'poppins', sans-serif;
+    padding: 60px 0;
+    box-shadow: 0px 10px 20px 0px grey inset;
+}
+
+.hirek .title {
+    color: white;
+    position: relative;
+    font-family: 'ubuntu', sans-serif;
+    text-align: center;
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 60px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgb(6, 136, 153), 5px 5px 10px grey;
+}
+
+.hirek .hirek-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.hirek .hirek-content .column-left {
+    width: 45%;
+}
+
+.hirek .hirek-content .column-left img {
+    height: 300px;
+    width: auto;
+    box-shadow: 10px 10px 5px grey;
+    border-radius: 6px;
+}
+
+.hirek .hirek-content .column-right {
+    width: 55%;
+}
+
+.hirek .hirek-content .column-right .text {
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 35px;
+}
+
+.hirek .hirek-content .column-right .text span {
+    color: rgb(6, 136, 153);
+}
+
+.hirek .hirek-content .column-right p {
+    text-align: justify;
+}
+
+.hirek .hirek-content .column-right a {
+    display: inline-block;
+    background: rgb(6, 136, 153);
+    color: white;
+    font-size: 20px;
+    padding: 10px 30px;
+    margin-top: 50px;
+    border-radius: 6px;
+    border: 2px solid rgb(6, 136, 153);
+    transition: all 0.3s ease;
+}
+
+.hirek .hirek-content .column-right a:hover {
+    color: rgb(6, 136, 153);
+    background: none;
+}
+
+
+/* ---------------Responsive media query start----------------*/
+
+@media (max-width: 1500px) {
+    .hirek .hirek-content .column-left img {
+        height: 250px;
+        width: auto;
+    }
+    .home .max-width {
+        margin: 480px 0 auto 0;
+    }
+}
+
+@media (max-width: 1300px) {
+    .hirek .hirek-content .column-left {
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 60px;
+        width: 100%;
+    }
+    .hirek .hirek-content .column-right {
+        flex: 100%;
+        width: 100%;
+    }
+}
+
+@media (max-width: 947px) {
+    .menu-btn {
+        display: block;
+        z-index: 999;
+    }
+    .menu-btn i.active:before {
+        content: "\f00d";
+    }
+    .navbar .menu {
+        position: fixed;
+        height: 100vh;
+        width: 100%;
+        left: -100%;
+        top: 0;
+        background: #111;
+        text-align: center;
+        padding-top: 80px;
+        transition: all 0.3s ease;
+    }
+    .navbar .menu.active {
+        left: 0;
+    }
+    .navbar .menu li {
+        display: block;
+    }
+    .navbar .menu li a {
+        display: inline-block;
+        margin: 20px 0;
+        font-size: 25px;
+    }
+    .home .home-content .text1 {
+        font-size: 25px;
+    }
+    .home .home-content .text2 {
+        font-size: 70px;
+    }
+    .home .home-content .text3 {
+        font-size: 35px;
+    }
+    .home .home-content a {
+        /*font-size: 23px;*/
+        padding: 10px 30px;
+    }
+    .max-width {
+        max-width: 930px;
+        padding: 0 50px;
+    }
+}
+
+@media (max-width: 650px) {
+    .max-width {
+        padding: 0 20px;
+    }
+    .home .home-content .text1 {
+        font-size: 20px;
+    }
+    .home .home-content .text2 {
+        font-size: 55px;
+    }
+    .home .home-content .text3 {
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 550px) {
+    .hirek .hirek-content .column-left img {
+        height: 160px;
+        width: auto;
+    }
+}
